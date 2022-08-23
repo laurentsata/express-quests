@@ -1,0 +1,1 @@
+alias mysql="winpty mysql"
