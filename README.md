@@ -16,3 +16,6 @@ Un client JavaScript pur Node.js implémentant le protocole MySQL.
 https://www.npmjs.com/package/mysql2  
 -------------------------------------------------------------------
 node app.js  
+-------------------------------------------------------------------
+http://localhost:5000/api/movies
+-------------------------------------------------------------------
