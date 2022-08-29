@@ -1,4 +1,5 @@
-const users = [
+/* eslint-disable no-undef */
+/*const users = [
     {  
         id: 1,
         firstname: 'John',
@@ -47,7 +48,7 @@ const users = [
         city: 'Milan',
         language: 'Spanish',
     },
-];
+]; */
 
 const database = require("./database");
 
