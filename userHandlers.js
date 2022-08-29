@@ -88,11 +88,11 @@ const getUserById = (req, res) => {
 //*************création route POST (ne pas oublier l'export)
 const postUser = (req, res) => {
   //res.send("Post route is working 🎉");
-  const { title, director, year, color, duration } = req.body; //extrait toutes les variables pour envoyer que les informations que nous souhaitons INSERER
+  const { firstname, lastname, email, city, language } = req.body; //extrait toutes les variables pour envoyer que les informations que nous souhaitons INSERER
   //***utilise database.query pour écrire la requête INSERT ***
   database
     .query(
-      "INSERT INTO users(firstname, lastname, mail, city, language) VALUES (?, ?, ?, ?, ?)", //**les ? seront remplacés par le module mysql2 avant que la requête ne soit envoyée à la base de données**
+      "INSERT INTO users (firstname, lastname, email, city, language) VALUES (?, ?, ?, ?, ?)", //**les ? seront remplacés par le module mysql2 avant que la requête ne soit envoyée à la base de données**
       [firstname, lastname, email, city, language]
     )
     .then(([result]) => {
@@ -108,5 +108,5 @@ const postUser = (req, res) => {
 module.exports = {
   getUsers,
   getUserById,
-  postUser, //********export de la fonction postMovie
+  postUser, //********export de la fonction postUser
 };
