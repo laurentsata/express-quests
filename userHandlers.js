@@ -103,10 +103,32 @@ const postUser = (req, res) => {
       res.status(500).send("Error saving the user");
     });
 };
+//***création d'une route PUT (ne pas oublier l'export en bas de pag et app.put dans app.js)***
+const updateUser = (req, res) => {
+  const id = parseInt(req.params.id);
+  const { firstname, lastname, email, city, language } = req.body;
 
+  database
+    .query(
+      "update movies set title = ?, director = ?, year = ?, color = ?, duration = ? where id = ?",
+      [firstname, lastname, email, city, language, id]
+    )
+    .then(([result]) => {
+      if (result.affectedRows === 0) {
+        res.status(404).send("Not Found");
+      } else {
+        res.sendStatus(204);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error editing the movie");
+    });
+};
 
 module.exports = {
   getUsers,
   getUserById,
-  postUser, //********export de la fonction postUser
+  postUser, //********export de la fonction postUser********
+  updateUser, //******export de la fonction updateUser******
 };
