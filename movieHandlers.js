@@ -99,9 +99,29 @@ const updateMovie = (req, res) => {
     });
 };
 
+//***création d'une route DELETE (ne pas oublier l'export en bas de pag et app.put dans app.js)***
+const deleteMovie = (req, res) => {
+  const id = parseInt(req.params.id);
+
+  database
+    .query("delete from movies where id = ?", [id])
+    .then(([result]) => {
+      if (result.affectedRows === 0) {
+        res.status(404).send("Not Found");
+      } else {
+        res.sendStatus(204);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error deleting the movie");
+    });
+};
+
 module.exports = {
   getMovies,
   getMovieById,
   postMovie, //********export de la fonction postMovie********
   updateMovie, //******export de la fonction updateMovie******
+  deleteMovie, //******export de la fonction deleteMovie******
 };
