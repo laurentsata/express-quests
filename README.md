@@ -21,3 +21,4 @@ http://localhost:5000/api/movies
 -------------------------------------------------------------------
 npm run dev
 -------------------------------------------------------------------
+http://localhost:5000/api/users/?language=English&?city=Paris
