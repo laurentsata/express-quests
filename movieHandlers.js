@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const movies = [
   {
     id: 1,
