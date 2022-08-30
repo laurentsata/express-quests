@@ -22,3 +22,7 @@ http://localhost:5000/api/movies
 npm run dev
 -------------------------------------------------------------------
 http://localhost:5000/api/users/?language=English&?city=Paris
+-------------------------------------------------------------------
+express validator:
+docs : https://express-validator.github.io/docs/
+npm install express-validator
